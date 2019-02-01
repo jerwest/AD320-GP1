@@ -23,7 +23,7 @@ into database, when users enter data into daily activity/contact fields and clic
 out of last field the values show on the right,  assisted on social media links,
 attended meetings and contributed to discussions and direction of site
 
-Jeremy Westfall - Edited CSS and HTML to unite pages of website, updated user
+Jeremy Westfall - Edited CSS and HTML files to unite pages of website, updated user
 stories and README file, when hover over nav bar, worked on nav bar links to other
 pages, it lights up, brainstormed rough draft of different tables and attributes,
 contributed to discussions and direction of site.
