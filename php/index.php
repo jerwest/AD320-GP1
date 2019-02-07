@@ -37,6 +37,10 @@ INSERT INTO CUSTOMER_METRICS (weight, calories_intake, calories_burned, workout_
   } else {
       echo "Error: " . $sql . "<br>" . mysqli_error($conn);
   }
+//TYPE MY SQL QUERY
+$query  = "SELECT EVERAGES FROM WEIGHT";
+
+
 
 
 

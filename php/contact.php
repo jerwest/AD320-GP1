@@ -4,7 +4,7 @@
 
   $servername = "localhost:3306";
   $username = "root";
-  $password = "enduro";
+  $password = "Barsik_71";
   $dbname = "fitness_tracker";
 
   $conn = new mysqli($servername, $username, $password, $dbname);
@@ -28,16 +28,13 @@ $sql = "
 INSERT INTO CONTACT_INFO (email, message, contact_reason)
 VALUES ('$cont_email', '$cont_message', '$cont_reason')";
 
-
+//====================INDEX PAGE=======================
 
 if (mysqli_query($conn, $sql)) {
     echo " Your request is being processed"."<br>"."<br>"."Thank you for contacting!"."<br>"."We will get in touch soon!";
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
-
-
-
 
 
   ?>

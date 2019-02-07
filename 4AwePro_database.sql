@@ -28,13 +28,3 @@ user_calBurned int,
 
 user_workout_type ENUM ('running','biking','eliptical','walking','weights')
 );
-
-CREATE TABLE CUSTOMER_METRICS(
-  CustomerID   int REFERENCES fitness_tracker(UserID),
-  Weight  int,
-  Calories_Intake   int,
-  Calories_Burned  int,
-  Workout_Type    char(25),
-  Activity_Level  char(25),
-  Workout_Length    int,
-  Hours_Slept   int);
