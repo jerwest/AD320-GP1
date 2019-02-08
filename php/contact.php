@@ -25,7 +25,7 @@ echo $cont_email;
 
 //inserting in a contact_info table
 $sql = "
-INSERT INTO CONTACT_INFO (email, message, contact_reason)
+INSERT INTO CONTACT_INFO (email, message, reason_contacting)
 VALUES ('$cont_email', '$cont_message', '$cont_reason')";
 
 //====================INDEX PAGE=======================

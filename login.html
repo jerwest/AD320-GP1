@@ -1,10 +1,26 @@
+Skip to content
+ 
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ @lailamay Sign out
+0
+0 0 jerwest/AD320-GP1
+ Code  Issues 0  Pull requests 0  Projects 0  Wiki  Insights
+AD320-GP1/contact.html
+215e190  an hour ago
+@jerwest jerwest added updated files
+     
+93 lines (79 sloc)  3.82 KB
 <!doctype html>
-<html lang="en">
+<html lang="en"> 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - LTF</title>
-    <!-- this is not working-->
+
     <!--Remy Sharp Shim -->
     <!--[if lte IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js" type="text/javascript" >
@@ -41,14 +57,15 @@
             <label for="show-menu" class="show-menu">MENU</label>
             <input type="checkbox" id="show-menu" role="button">
             <ul id="menu" class = "test">
-                <li><a href="login.html">LOGIN</a></li>
+				<li><a href="login.html">LOGIN</a></li>
                 <li><a href="index.html">INDEX</a></li>
                 <li><a href="activity.html">ACTIVITY</a></li>
                 <li><a href="contact.html">CONTACT</a></li>
             </ul>
         </nav> <!--end of nav-->
+
 		<main>
-			<form action="assignment3.php" method="get">
+			<form action="login.php" method="post">
 				<h2>Sign In</h2>
 				<label for="exampleEmailInput">Username: </label><input class="u-full-width"
 				type="text" placeholder="username" id="exampleRecipientInput" name="name"><br>
@@ -61,17 +78,18 @@
 				type="email" placeholder="email" id="exampleRecipientInput" name="email"><br>
 				<label for="exampleEmailInput">Create Password: </label><input class="u-full-width"
 				type="password" placeholder="password" id="exampleRecipientInput" name="password"><br>
-        <label for="exampleEmailInput">Confirm Password: </label><input class="u-full-width"
-				type="password" placeholder="password" id="exampleRecipientInput" name="conf_password"><br>
+                <input class="button-primary" type="submit" value="Log in/Create Account">
 			</form>
 		</main>
 		<footer>
             <ul class = "test">
-                <li>Copyright 2018 &copy;</li>
+                <li>Copyright 2019 &copy;</li>
                 <li><a href="privacy.html">Terms & Conditions</a></li>
                 <li>Designed by 4AwePro</li>
             </ul>
         </footer> <!--end of footer-->
-	</div> <!--End of Wrapper -->
+
+	</div> <!--End of wrapper-->
+    <script src = "js/script1.js"></script>
 </body>
 </html>
