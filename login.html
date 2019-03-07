@@ -1,9 +1,9 @@
+
 <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - LTF</title>
 
     <!--Remy Sharp Shim -->
     <!--[if lte IE 9]>
@@ -41,14 +41,15 @@
             <label for="show-menu" class="show-menu">MENU</label>
             <input type="checkbox" id="show-menu" role="button">
             <ul id="menu" class = "test">
-                <li><a href="login.html">LOGIN</a></li>
+				<li><a href="login.html">LOGIN</a></li>
                 <li><a href="index.html">INDEX</a></li>
                 <li><a href="activity.html">ACTIVITY</a></li>
                 <li><a href="contact.html">CONTACT</a></li>
             </ul>
         </nav> <!--end of nav-->
-		<main>
-			<form action="assignment3.php" method="get">
+
+		<main> <!--started main container-->
+			<form action="login.php" method="post">
 				<h2>Sign In</h2>
 				<label for="exampleEmailInput">Username: </label><input class="u-full-width"
 				type="text" placeholder="username" id="exampleRecipientInput" name="name"><br>
@@ -61,17 +62,21 @@
 				type="email" placeholder="email" id="exampleRecipientInput" name="email"><br>
 				<label for="exampleEmailInput">Create Password: </label><input class="u-full-width"
 				type="password" placeholder="password" id="exampleRecipientInput" name="password"><br>
-        <label for="exampleEmailInput">Confirm Password: </label><input class="u-full-width"
-				type="password" placeholder="password" id="exampleRecipientInput" name="password"><br>
+        		<label for="exampleEmailInput">Create Password: </label><input class="u-full-width"
+				type="password" placeholder="password" id="exampleRecipientInput" name="conf_password"><br>
+				 <input class="button-primary" type="submit" value="Log in/Create Account">
 			</form>
+
 		</main>
 		<footer>
             <ul class = "test">
-                <li>Copyright 2018 &copy;</li>
+                <li>Copyright 2019 &copy;</li>
                 <li><a href="privacy.html">Terms & Conditions</a></li>
                 <li>Designed by 4AwePro</li>
             </ul>
         </footer> <!--end of footer-->
-	</div> <!--End of Wrapper -->
+
+	</div> <!--End of wrapper-->
+    <script src = "js/script1.js"></script>
 </body>
 </html>
