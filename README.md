@@ -2,6 +2,7 @@ https://github.com/jerwest/AD320-GP1/
 
 ### This repository is for Group Project #1 in AD 320 - Web App Development at North Seattle College.
 
+#### Project Goal: Create basic LAMP web application with frontend using HTML, CSS, JavaScript, Skeleton, and backend using PHP and SQL. Goal has been accomplished :clap::tada:
 ![UserInterface](https://github.com/jerwest/AD320-GP1/blob/master/images/GP1activity.png?raw=true "Actifity UI.JPG")
 
 ![UserInterface](https://github.com/jerwest/AD320-GP1/blob/master/images/GP1contact.png?raw=true "Actifity UI.JPG")
