@@ -1,26 +1,31 @@
 https://github.com/jerwest/AD320-GP1/
 
-This repository is for Group Project #1 in AD 320 - Web App Development at North Seattle College.
+### This repository is for Group Project #1 in AD 320 - Web App Development at North Seattle College.
 
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#~~~~~~~~~~~~~~~~Group Project #1 - Sprint #3~~~~~~~~~~~~~~~~~~~
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+![UserInterface](https://github.com/jerwest/AD320-GP1/blob/master/images/GP1%20login.png?raw=true "Actifity UI.JPG")
+
+![UserInterface](https://github.com/jerwest/AD320-GP1/blob/master/images/GP1activity.png?raw=true "Actifity UI.JPG")
+
+![UserInterface](https://github.com/jerwest/AD320-GP1/blob/master/images/GP1contact.png?raw=true "Actifity UI.JPG")
+
+#### Group Project #1 - Sprint :three:
+
 
 Group Project #1 - Sprint #3 - Liteweight Fitness Tracker (LFT)
 
-Sanford Winslow - edited html to have company logo hyperlink to home page, added
+**Sanford Winslow** - edited html to have company logo hyperlink to home page, added
 Terms & Conditions page, edited html footer to show link for Terms & Conditions,
 edited php file to reflect "for examples:", added second field for password confirmation
 
-Laila Chavez - edited html to have company logo hyperlink to home page, added 
+**Laila Chavez** - edited html to have company logo hyperlink to home page, added 
 Terms & Conditions page, edited html footer to show link for Terms & Conditions,
 edited php file to reflect "for examples:", added second field for password confirmation
 
-Iryna Sherepot - created php for averages in data input, created event listener on
+**Iryna Sherepot** - created PHP for averages in data input, created event listener on
 metrics page with submit button, javascript function to display values on right of
 metrics page, little bit of styling,
 
-Jeremy Westfall - added data to database tables to fill in database with dummy data,
+**Jeremy Westfall** - added data to database tables to fill in database with dummy data,
 created SQL files to create and insert data into database, maintained repository and
 README.md file
 
@@ -50,28 +55,26 @@ For Sprint 3, I would like your team to target any remaining user stories and co
 
 This is the Final LAMP sprint! Good luck!
 
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#~~~~~~~~~~~~~~~~Group Project #1 - Sprint #2~~~~~~~~~~~~~~~~~~~
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#### Group Project #1 - Sprint :two:
 
 Group Project #1 - Sprint #2 - Liteweight Fitness Tracker (LFT)
 
 Summary of Work:
 
-Sanford Winslow - Edited and worked on php for activity page and contact page,
+**Sanford Winslow** - Edited and worked on php for activity page and contact page,
 created sql database tables and servers, assisted on social media links, attended
 meetings and contributed to discussions and direction of site.
 
-Laila Chavez - Created and filled out dummy user data to populate tables for
+**Laila Chavez** - Created and filled out dummy user data to populate tables for
 database, assisted on social media links, attended meetings and contributed to
 discussions and direction of site.
 
-Iryna Sherepot - Created php script to insert data from contact and activity forms
+**Iryna Sherepot** - Created php script to insert data from contact and activity forms
 into database, when users enter data into daily activity/contact fields and clicks
 out of last field the values show on the right,  assisted on social media links,
 attended meetings and contributed to discussions and direction of site
 
-Jeremy Westfall - Edited CSS and HTML to unite pages of website, updated user
+**Jeremy Westfall** - Edited CSS and HTML to unite pages of website, updated user
 stories and README file, when hover over nav bar, worked on nav bar links to other
 pages, it lights up, brainstormed rough draft of different tables and attributes,
 contributed to discussions and direction of site.
@@ -102,21 +105,19 @@ self-guided development of your LAMP project. After demo next week (2/5), one
 group member should submit a link to the repo.
 
 
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#~~~~~~~~~~~~~~~~Group Project #1 - Sprint #1~~~~~~~~~~~~~~~~~~~
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#### Group Project #1 - Sprint :one:
 
 Group Project #1 - Sprint #1 - Liteweight Fitness Tracker (LFT)
 
 Summary of Work:
 
-Sanford Winslow - Login page, along with server, database and backend work
+**Sanford Winslow** - Login page, along with server, database and backend work
 
-Laila Chavez - Contact page, along with server, database and backend work
+**Laila Chavez** - Contact page, along with server, database and backend work
 
-Iryna Sherepot - Activity and Index pages, along with server, database and backend work
+**Iryna Sherepot** - Activity and Index pages, along with server, database and backend work
 
-Jeremy Westfall - Git work, combined pages, very slight tweaks for presentation
+**Jeremy Westfall** - Git work, combined pages, very slight tweaks for presentation
 
 
 List of Completed User Stories:
@@ -165,9 +166,7 @@ Completed stories
 User story X
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#~~~~~~~~~~~~~~~~Group Project #1 - Sprint #0~~~~~~~~~~~~~~~~~~~
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+#### Group Project #1 - Sprint :zero:
 Group Project #1 - Sprint #0 - Liteweight Fitness Tracker (LFT)
 
 Project Write-Up:  
