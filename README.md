@@ -2,8 +2,6 @@ https://github.com/jerwest/AD320-GP1/
 
 ### This repository is for Group Project #1 in AD 320 - Web App Development at North Seattle College.
 
-![UserInterface](https://github.com/jerwest/AD320-GP1/blob/master/images/GP1%20login.png?raw=true "Actifity UI.JPG")
-
 ![UserInterface](https://github.com/jerwest/AD320-GP1/blob/master/images/GP1activity.png?raw=true "Actifity UI.JPG")
 
 ![UserInterface](https://github.com/jerwest/AD320-GP1/blob/master/images/GP1contact.png?raw=true "Actifity UI.JPG")
@@ -118,6 +116,8 @@ Summary of Work:
 **Iryna Sherepot** - Activity and Index pages, along with server, database and backend work
 
 **Jeremy Westfall** - Git work, combined pages, very slight tweaks for presentation
+
+![UserInterface](https://github.com/jerwest/AD320-GP1/blob/master/images/GP1%20login.png?raw=true "Actifity UI.JPG")
 
 
 List of Completed User Stories:
