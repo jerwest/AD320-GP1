@@ -26,13 +26,30 @@
 
 	<!-- FAVICON
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-	<link rel="icon" type="image/png" href="images/favicon.png">
+<!--	<link rel="icon" type="image/png" href="images/favicon.png">-->
+    
+    <!-- <script>
+			function myFunction() {
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+					document.getElementById("my-demo").innerHTML = this.responseText;
+					}
+				};
+				xhttp.open("GET", "https://4x21cafvig.execute-api.us-west-2.amazonaws.com/default/myResponseFunction", true);
+				xhttp.send();
+
+			}
+
+		</script> -->
 
 </head>
 <body>
 	<div class="container">
+        <h1>Hello <span id="my-demo">Cloud Gurus!</span></h1>
+        <button onclick="myFunction()">Click me</button>
     	<header class = "eleven columns" style="margin-top: 1%">
-	        <a href="login.html" ><img src="images/logo.png" alt="logo"></a>
+	        <a href="html/login.html" ><img src="images/logo.png" alt="logo"></a>
 			<a href="https://www.facebook.com/" target = "_blank"><img src="images/facebook.png" alt="Facebook"></a>
 			<a href="https://twitter.com/"><img src="images/twitter.png" alt="Twitter"></a>
 			<a href="https://www.instagram.com/" target = "_blank"><img src="images/instagram.png" alt="Instagram"></a>
@@ -41,10 +58,10 @@
             <label for="show-menu" class="show-menu">MENU</label>
             <input type="checkbox" id="show-menu" role="button">
             <ul id="menu" class = "test">
-				<li><a href="login.html">LOGIN</a></li>
+				<li><a href="./html/login.html">LOGIN</a></li>
                 <li><a href="index.html">INDEX</a></li>
-                <li><a href="activity.html">ACTIVITY</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="./html/activity.html">ACTIVITY</a></li>
+                <li><a href="./html/contact.html">CONTACT</a></li>
             </ul>
         </nav> <!--end of nav-->
 
@@ -107,7 +124,7 @@
               <label for="exampleRecipientInput"> Hours of sleep? </label>
       <input class="u-full-width" type="number" placeholder="for example: 8" id="sleepInput" name = "sleep">
 
-  <input class="button-primary" type="submit" value="Submit">
+  <input class="button-primary" type="submit" value="Submit" formaction="https://4x21cafvig.execute-api.us-west-2.amazonaws.com/default/myResponseFunction">
 </form>
 
       <!----------------------------------------------------->
@@ -119,7 +136,7 @@
           <p id = "output">
 
           </p>
-              <img src = "images/shadows.jpg" alt = "runners" class = "twelve columns">
+              <img src = "images/running-shadows.png" alt = "runners" class = "twelve columns">
         </div>
       </div>  <!--end second row-->
 
@@ -140,7 +157,7 @@
 	  </ul>
   </footer> <!--end of footer-->
      </div>
-    <script src= "js/script.js"> </script>
+<!--    <script src= "js/script.js"> </script>-->
 </body>
 
 </html>
