@@ -103,11 +103,11 @@
       <input class="u-full-width" type="number" placeholder="for example: 500" id="calUse" name = "calBurned">
 
   <label for="exampleRecipientInput"> Workout type today: </label>
-      <input class="u-full-width" type="text" placeholder="for example: running" id="workoutInput" name = "workout_type">
+      <input class="u-full-width" type="text" placeholder="for example: running" id="workoutInput" name = "workoutType">
 
-    <label for="exampleRecipientInput"> Activity level: </label>
+    <label for="exampleRecipientInput" > Activity level: </label>
       <select class="u-full-width" id="activity_options">
-        <option value="Light">Light (HR 90 - 120 bpm) </option>
+        <option value="Light" >Light (HR 90 - 120 bpm) </option>
         <option value="Moderate">Moderate (HR 121 - 140 bpm)</option>
         <option value="Intense">Intense (HR 141 - 160 bpm)</option>
       </select>
@@ -124,7 +124,8 @@
               <label for="exampleRecipientInput"> Hours of sleep? </label>
       <input class="u-full-width" type="number" placeholder="for example: 8" id="sleepInput" name = "sleep">
 
-  <input class="button-primary" type="submit" value="Submit" formaction="https://4x21cafvig.execute-api.us-west-2.amazonaws.com/default/myResponseFunction" method = "GET">
+  <input class="button-primary" type="submit" formaction="https://4x21cafvig.execute-api.us-west-2.amazonaws.com/default/myPostRequest" 
+  method = "post" value="Submit" > 
 </form>
 
       <!----------------------------------------------------->

@@ -6,13 +6,13 @@ USE liteweight_fitness_tracker;
 DROP TABLE IF EXISTS CUSTOMER_METRICS;
 CREATE TABLE CUSTOMER_METRICS (
  
-	entry				INTEGER				PRIMARY KEY AUTO_INCREMENT,
-	customer_id	       	INTEGER 	      	NOT NULL,
+	entry				INTEGER	 NOT NULL			PRIMARY KEY AUTO_INCREMENT,
+	-- customer_id	       	INTEGER 	      	NOT NULL,
 	weight		  	    INTEGER(3),
 	calorie_intake		INTEGER(5)     		NOT NULL,
     calories_burned		INTEGER(5)			NOT NULL,
     workout_type		VARCHAR(30)			NOT NULL,
-    activity_level		ENUM('Light (HR 90 - 120 bpm)', 'Moderate (HR 121 - 140 bpm)', 'Intense (HR 141 - 160 bpm)')	NOT NULL,
+    -- activity_level		ENUM('Light (HR 90 - 120 bpm)', 'Moderate (HR 121 - 140 bpm)', 'Intense (HR 141 - 160 bpm)')	NOT NULL,
     length_workout		INTEGER(5)			NOT NULL,
     hours_slept			INTEGER(2)			NOT NULL
 	-- CONSTRAINT 		    METRIC_ID_PK		PRIMARY KEY (metric_id)

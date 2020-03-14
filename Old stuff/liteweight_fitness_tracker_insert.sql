@@ -5,25 +5,31 @@ SELECT * FROM CUSTOMER_METRICS;
 
 /***   CUSTOMER_METRICS data   **********************************************************/
 
-INSERT INTO CUSTOMER_METRICS(customer_id,
+INSERT INTO CUSTOMER_METRICS(
 	weight,
 	calorie_intake	,
     calories_burned,
     workout_type,
-    activity_level,
+  --   activity_level,
     length_workout,
     hours_slept	) VALUES (
-	 1, 120, 1000, 150, 'running', 'Light (HR 90 - 120 bpm)', 15, 12);
+	120, 1000, 150, 'running', 15, 12);
      
-INSERT INTO CUSTOMER_METRICS (customer_id,
+INSERT INTO CUSTOMER_METRICS VALUES (
+default, 99, 1000, 150, 'running', 15, 12);
+
+     
+INSERT INTO CUSTOMER_METRICS (
 	weight,
 	calorie_intake	,
     calories_burned,
     workout_type,
-    activity_level,
+ --    activity_level,
     length_workout,
     hours_slept	) VALUES (
-	2, 212, 1001, 150, 'walking', 'Light (HR 90 - 120 bpm)', 20, 11);
+	 212, 1001, 150, 'walking', 20, 11);
+    
+    
 -- INSERT INTO CUSTOMER_METRICS VALUES (
 -- 	3, 3, '2018-12-30', 183, 1002, 150, 'swimming', 'Light (HR 90 - 120 bpm)', 15, 11);
 -- INSERT INTO CUSTOMER_METRICS VALUES (
