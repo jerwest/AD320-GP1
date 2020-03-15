@@ -41,7 +41,75 @@
 
 			}
 
-		</script> -->
+    </script> -->
+    
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script>
+      function submitToAPI(e) {
+       e.preventDefault();
+       var URL = " https://3ot8m8zrf9.execute-api.us-west-2.amazonaws.com/prod/contact-us";
+          
+         
+
+            // var Namere = /[A-Za-z]{1}[A-Za-z]/;
+            // if (!Namere.test($("#name-input").val())) {
+            //              alert ("Name can not less than 2 char");
+            //     return;
+            // }
+            // var mobilere = /[0-9]{10}/;
+            // if (!mobilere.test($("#phone-input").val())) {
+            //     alert ("Please enter valid mobile number without dashes");
+            //     return;
+            // }
+            // if ($("#email-input").val()=="") {
+            //     alert ("Please enter your email id");
+            //     return;
+            // }
+
+            // var reeamil = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,6})?$/;
+            // if (!reeamil.test($("#email-input").val())) {
+            //     alert ("Please enter valid email address");
+            //     return;
+            // }
+
+       var weight = $("#weight").val();
+       var calorieIntake = $("#calIntake").val();
+       var caloriesBurned = $("#calBurned").val();
+       var workoutType = $("#workoutType").val();
+       var workoutLength = $("#time").val();
+       var hoursSlept = $("#sleep").val();
+
+
+       var data = {
+        weight : weight,
+        calorieIntake : calorieIntake,
+        caloriesBurned : caloriesBurned,
+        workoutType : workoutType,
+        workoutLength : workoutLength,
+        hoursSlept: hoursSlept,
+        };
+
+       $.ajax({
+         type: "POST",
+         url : "https://4x21cafvig.execute-api.us-west-2.amazonaws.com/default/myPostRequest",
+         dataType: "json",
+         crossDomain: "true",
+         contentType: "application/json; charset=utf-8",
+         data: JSON.stringify(data),
+
+         
+         success: function () {
+           // clear form and show a success message
+           alert("You daily values were submitted! \nThank you! \nOur company will reach out to you soon. ");
+           document.getElementById("daily-values").reset();
+       location.reload();
+         },
+         error: function () {
+           // show an error message
+           alert("Sorry, your information could not be processed at this time. \n Please try again later.");
+         }});
+     }
+    </script>
 
 </head>
 <body>
@@ -89,7 +157,7 @@
       <div class="eight columns" style="margin-top: 5%">
         <h4>Daily Activity Update Form</h4>
           <!--Input info form--->
-    <form action="php/index.php" method="post">
+    <form action="https://4x21cafvig.execute-api.us-west-2.amazonaws.com/default/myPostRequest" method="post" >
 
     <label for="exampleEmailInput">Today's weight (lbs): </label>
       <input class="u-full-width" type="number" placeholder="for example: 130" id="exampleWeightInput" name = "weight">
@@ -124,7 +192,7 @@
               <label for="exampleRecipientInput"> Hours of sleep? </label>
       <input class="u-full-width" type="number" placeholder="for example: 8" id="sleepInput" name = "sleep">
 
-  <input class="button-primary" type="submit" formaction="https://4x21cafvig.execute-api.us-west-2.amazonaws.com/default/myPostRequest" 
+  <input class="button-primary" type="submit" formaction="submitToAPI(event)" 
   method = "post" value="Submit" > 
 </form>
 

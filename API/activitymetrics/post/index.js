@@ -2,9 +2,12 @@
 const http = require('http');
 const AWS = require("aws-sdk");
 const AWSXRay = require('aws-xray-sdk-core')
-  
+//const queryString = require('query-string');
+var querystring = require('querystring')
 //const mysql = require('mysql');
 //const uuid = require("uuid/v4");
+
+
 
 const mysql = require('serverless-mysql')({
   config: {
@@ -26,18 +29,80 @@ exports.handler = async (event, context, callback) => {
 
 
   mysql.config();
-  // allows for using callbacks as finish/error-handlers
+  // allows for using callbacks as fireqnish/error-handlers
   context.callbackWaitsForEmptyEventLoop = false;
 
-  console.log("Event is ", event);
-  console.log("Event body is: ", event.body);
-  console.log('Received event:', JSON.stringify(event, null, 2));
+ 
 
-  const eventBodyJson = JSON.stringify(event, null, 2);
-  console.log('eventBodyJson: :', JSON.stringify(event, null, 2));
+ 
+  
+
+  console.log("Event is ", event);
+  // Prints non-string body with &=
+  console.log("Event body is: ", event.body);
+  const bodyAsString = JSON.stringify(event.body);
+
+  //------------WORKS AS STRING-------------
+  console.log ("Body as a String", bodyAsString);
+
+  const parsedQueryString =  querystring.parse(bodyAsString);
+
+  const parseBody = querystring.parse(event.body)
+  // works
+  console.log("parsed body", parseBody)
+  console.log("Parsed body weight", parseBody.weight)
+  // Works
+
+//   '"weight': '499',
+//   calIntake: '2999',
+//   calBurned: '500',
+//   workout_type: 'running',
+//   time: '60',
+//   sleep: '6"'
+// }
+
+
+ // console.log("Parsed query string", parsedQueryString)
+
+  //const parQueryStringJson = JSON.parse(parsedQueryString)
+  //console.dir("Json version of query string please ", JSON.parse(parsedQueryString))
+
+
+
+
+
+  const post_data = querystring.stringify(event.body);
+  console.log ("Post Data event body ", post_data )
+
+  // Prints String Json
+  console.log('Received event:', JSON.stringify(event, null, 2));
+  //console.log("REceived event as json.parse ", JSON.parse(event));
+// stringify into Json strings
+  const eventJsonString = JSON.stringify(event, null, 2);
+  // Prints bunch of 
+  console.log('event stringified: :', JSON.stringify(eventJsonString, null, 2));
+// parse json strings
+// Back to how it was before stringigying
+  const eventJsonParsed = JSON.parse(eventJsonString);
+  console.log("Parsed event ", eventJsonParsed.body);
+  var post_data1 = querystring.stringify(eventJsonParsed.body);
+  console.log ("Post Data event body ", post_data1 )
   
   
-  var weight=event.body.weight;
+
+  
+  //const body = JSON.parse(event.body);
+
+  //console.log("Event Body parsed " + body);
+
+
+  //var eventBody=eventJson.body;
+ // console.log("EventJson.body " , eventBody);
+ 
+ // Returns undefined 
+  var weight=eventJsonParsed.body.weight;
+  console.log("Weight eventJson " , weight);
+
   var calorieIntake = event.body.calIntake;
   var caloriesBurned=event.body.calBurned;
   var workoutType=event.body.workout_type;
