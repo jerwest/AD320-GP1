@@ -48,7 +48,7 @@ exports.handler = async (event, context, callback) => {
   const parsedQueryString =  querystring.parse(bodyAsString);
 
   const parseBody = querystring.parse(event.body)
-  // works
+  // ***************works**************** 
   console.log("parsed body", parseBody)
   console.log("Parsed body weight", parseBody.weight)
   // Works
@@ -60,15 +60,6 @@ exports.handler = async (event, context, callback) => {
 //   time: '60',
 //   sleep: '6"'
 // }
-
-
- // console.log("Parsed query string", parsedQueryString)
-
-  //const parQueryStringJson = JSON.parse(parsedQueryString)
-  //console.dir("Json version of query string please ", JSON.parse(parsedQueryString))
-
-
-
 
 
   const post_data = querystring.stringify(event.body);
@@ -85,30 +76,21 @@ exports.handler = async (event, context, callback) => {
 // Back to how it was before stringigying
   const eventJsonParsed = JSON.parse(eventJsonString);
   console.log("Parsed event ", eventJsonParsed.body);
+
   var post_data1 = querystring.stringify(eventJsonParsed.body);
   console.log ("Post Data event body ", post_data1 )
   
-  
-
-  
-  //const body = JSON.parse(event.body);
-
-  //console.log("Event Body parsed " + body);
-
-
-  //var eventBody=eventJson.body;
- // console.log("EventJson.body " , eventBody);
  
  // Returns undefined 
-  var weight=eventJsonParsed.body.weight;
+  var weight = parseBody.weight;
   console.log("Weight eventJson " , weight);
 
-  var calorieIntake = event.body.calIntake;
-  var caloriesBurned=event.body.calBurned;
-  var workoutType=event.body.workout_type;
+  var calorieIntake = parseBody.calIntake;
+  var caloriesBurned=parseBody.calBurned;
+  var workoutType=parseBody.workout_type;
   // var activityLevel = evnet.body.
-  var workoutLength =event.body.time;
-  var hoursSlept=event.body.sleep;
+  var workoutLength =parseBody.time;
+  var hoursSlept=parseBody.sleep;
  
   var queryParams = [
     weight,
@@ -142,7 +124,7 @@ exports.handler = async (event, context, callback) => {
 //  // using the forign key key_holdertype_id from keyholdertype table
  
 //  }else{
-     var query = "INSERT INTO CUSTOMER_METRICS(weight, calorie_intake, calories_burned, workout_type, length_workout, hours_slept) VALUES ( ?,?,?,?,?);"  
+     var query = "INSERT INTO CUSTOMER_METRICS(weight, calorie_intake, calories_burned, workout_type, length_workout, hours_slept) VALUES ( ?,?,?,?,?, ?);"  
     // "VALUES (@weight, calorieIntake, caloriesBurned, workoutType, workoutLength,  hoursSlept );"
   // var query = "INSERT INTO CUSTOMER_METRICS VALUES "
   mysql.query(query,queryParams, (err, res) => {
