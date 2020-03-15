@@ -25,6 +25,12 @@ console.log({
   database        : process.env.databaseName
 });
 
+function sayThankYou() {
+  console.log("Thank you!")
+}
+
+
+
 exports.handler = async (event, context, callback) => {
 
 
@@ -32,65 +38,25 @@ exports.handler = async (event, context, callback) => {
   // allows for using callbacks as fireqnish/error-handlers
   context.callbackWaitsForEmptyEventLoop = false;
 
- 
-
- 
-  
-
   console.log("Event is ", event);
-  // Prints non-string body with &=
-  console.log("Event body is: ", event.body);
-  const bodyAsString = JSON.stringify(event.body);
 
-  //------------WORKS AS STRING-------------
-  console.log ("Body as a String", bodyAsString);
-
-  const parsedQueryString =  querystring.parse(bodyAsString);
 
   const parseBody = querystring.parse(event.body)
   // ***************works**************** 
   console.log("parsed body", parseBody)
-  console.log("Parsed body weight", parseBody.weight)
-  // Works
+  console.log("Parsed body weight", parseBody.weight);
 
-//   '"weight': '499',
-//   calIntake: '2999',
-//   calBurned: '500',
-//   workout_type: 'running',
-//   time: '60',
-//   sleep: '6"'
-// }
-
-
-  const post_data = querystring.stringify(event.body);
-  console.log ("Post Data event body ", post_data )
-
-  // Prints String Json
-  console.log('Received event:', JSON.stringify(event, null, 2));
-  //console.log("REceived event as json.parse ", JSON.parse(event));
-// stringify into Json strings
-  const eventJsonString = JSON.stringify(event, null, 2);
-  // Prints bunch of 
-  console.log('event stringified: :', JSON.stringify(eventJsonString, null, 2));
-// parse json strings
-// Back to how it was before stringigying
-  const eventJsonParsed = JSON.parse(eventJsonString);
-  console.log("Parsed event ", eventJsonParsed.body);
-
-  var post_data1 = querystring.stringify(eventJsonParsed.body);
-  console.log ("Post Data event body ", post_data1 )
-  
- 
- // Returns undefined 
-  var weight = parseBody.weight;
-  console.log("Weight eventJson " , weight);
-
-  var calorieIntake = parseBody.calIntake;
-  var caloriesBurned=parseBody.calBurned;
-  var workoutType=parseBody.workout_type;
+  // converting string data types of variables to the integer
+  var weight = parseInt(parseBody.weight);
+  var calorieIntake = parseInt(parseBody.calIntake);
+  var caloriesBurned = parseInt(parseBody.calBurned);
+  var workoutType = parseBody.workout_type;
   // var activityLevel = evnet.body.
-  var workoutLength =parseBody.time;
-  var hoursSlept=parseBody.sleep;
+  var workoutLength = parseInt(parseBody.time);
+  var hoursSlept = parseInt(parseBody.sleep);
+
+  console.log("Types of weight", typeof weight,"CalIntake", typeof calorieIntake, "Cal Burned", typeof caloriesBurned,"Type ", typeof workoutType, 
+     "Length", typeof workoutLength, "Sleep", typeof hoursSlept);
  
   var queryParams = [
     weight,
@@ -102,7 +68,7 @@ exports.handler = async (event, context, callback) => {
   ]; 
 
   
-  
+
   var error = new Error("wrong datatype inside json");
 
   console.log("Query param weight : ", queryParams[0])
@@ -110,32 +76,59 @@ exports.handler = async (event, context, callback) => {
     
   //check if the right data type is provided
 
-//   if(typeof weight != "number" || 
-//      typeof calorieIntake != "number"   || 
-//      typeof caloriesBurned != "number"     ||
-//      typeof workoutType != 'string'     ||
-//      typeof workoutLength != "number" ||
-//      typeof hoursSlept != "number"){
-     
-//     context.fail(error);
+  if(typeof weight != "number" || 
+     typeof calorieIntake != "number"   || 
+     typeof caloriesBurned != "number"     ||
+     typeof workoutType != 'string'     ||
+     typeof workoutLength != "number" ||
+     typeof hoursSlept != "number"){
 
+     console.log("Types of ", typeof weight, typeof calorieIntake, typeof caloriesBurned, typeof workoutType, 
+     typeof workoutLength, typeof hoursSlept);
 
-//  // SQL query to insert into keyholder table
-//  // using the forign key key_holdertype_id from keyholdertype table
+    context.fail(error);
+
+ // SQL query to insert into keyholder table
+ // using the forign key key_holdertype_id from keyholdertype table
  
-//  }else{
+  }else{
      var query = "INSERT INTO CUSTOMER_METRICS(weight, calorie_intake, calories_burned, workout_type, length_workout, hours_slept) VALUES ( ?,?,?,?,?, ?);"  
     // "VALUES (@weight, calorieIntake, caloriesBurned, workoutType, workoutLength,  hoursSlept );"
-  // var query = "INSERT INTO CUSTOMER_METRICS VALUES "
-  mysql.query(query,queryParams, (err, res) => {
-      if (err) {
-        throw err
-      }
-      callback(null,res);
-    })
-//  }
-// //
+    // var query = "INSERT INTO CUSTOMER_METRICS VALUES "
+     mysql.query(query,queryParams, (err, res) => {
+       if (err) {
+         throw err
+       }
 
-await mysql.end();
+    console.log("Responce is ", res); 
+
+    const response = {
+      "statusCode": 200,
+       "headers": {
+      "Access-Control-Allow-Origin": "*",
+     },
+     "body": "Thank you for entering daily data!"
+  }
+
+     //return resp;
+      callback(null,response);
+     //sayThankYou();
+      
+    })
+ }
+//end of sql qury
+
+  await mysql.end();
+
+  const resp = {
+      "statusCode": 200,
+       "headers": {
+      "Access-Control-Allow-Origin": "*",
+     },
+     "body": "Thank you for entering daily data!"
+  }
+
+callback(null, resp);
+
 
  };
