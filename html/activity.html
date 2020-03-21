@@ -28,6 +28,22 @@
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	<link rel="icon" type="image/png" href="../images/favicon.png">
 
+	<script>
+		fetch('https://4x21cafvig.execute-api.us-west-2.amazonaws.com/default/myResponseFunction'
+		, {
+		   method: "GET"
+		}
+           
+).then(response => responce.text())
+			.then(
+			console.log("Metrics: ", responce)
+			)
+			.catch(function(err) {
+			console.log('Fetch problem: ' + err.message);
+			});
+
+	</script>
+
 </head>
 <body>
 	<div class="container">
@@ -53,17 +69,33 @@
       <div class = "row" >
 		<main id="chart-container" class = "eight columns" style="margin-top: 2%">
             <!--<div id="chart-container" class = "eight columns" style="margin-top: 1%">-->
-            <h4>Your activity chart will render here!</h4>
+			<h4>Your activity chart will render here!</h4>
+			
+			<table style="width:90%">
+				<tr>
+				  <th>Weight</th>
+				  <th>Calories Intage</th>
+				  <th>Calories Butned</th>
+				  <th>Workout Type</th>
+				  <th>Activity Level</th>
+				  <th>Time working out</th>
+				  <th>Hours of sleep</th>
+				</tr>
+				<tr>
+				  <td>Jill</td>
+				  <td>Smith</td>
+				  <td>50</td>
+				</tr>
+				<tr>
+				  <td>Eve</td>
+				  <td>Jackson</td>
+				  <td>94</td>
+				</tr>
+			  </table>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 			<!--ended chart-->
 			<!--Your lists of entered daily activitites -->
-			<ul class = "eight columns">
-				<li>Coffeefjsdaklf;dsfjlsd;ureaofsdjzlsfaadsfasdfsdafdf   </li>
-				<li>Teafdsafdsdsfdfdddddd      </li>
-				<li>Milkfjsdaklf;dsfjlsd;ureaofsdjzlsfaadsfasdfsdafdf</li>
-			  </ul>
 			  
-
 		</main>
 
 		<div class = "four columns" style="margin-top: 2%">

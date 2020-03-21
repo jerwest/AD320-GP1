@@ -1,13 +1,8 @@
-//console.log('GW1');
 const http = require('http');
 const AWS = require("aws-sdk");
 const AWSXRay = require('aws-xray-sdk-core')
 //const queryString = require('query-string');
 var querystring = require('querystring')
-//const mysql = require('mysql');
-//const uuid = require("uuid/v4");
-
-
 
 const mysql = require('serverless-mysql')({
   config: {
@@ -25,21 +20,13 @@ console.log({
   database        : process.env.databaseName
 });
 
-function sayThankYou() {
-  console.log("Thank you!")
-}
-
-
-
 exports.handler = async (event, context, callback) => {
-
 
   mysql.config();
   // allows for using callbacks as fireqnish/error-handlers
   context.callbackWaitsForEmptyEventLoop = false;
 
   console.log("Event is ", event);
-
 
   const parseBody = querystring.parse(event.body)
   // ***************works**************** 
@@ -50,7 +37,7 @@ exports.handler = async (event, context, callback) => {
   var weight = parseInt(parseBody.weight);
   var calorieIntake = parseInt(parseBody.calIntake);
   var caloriesBurned = parseInt(parseBody.calBurned);
-  var workoutType = parseBody.workout_type;
+  var workoutType = parseBody.workoutType;
   // var activityLevel = evnet.body.
   var workoutLength = parseInt(parseBody.time);
   var hoursSlept = parseInt(parseBody.sleep);
@@ -67,15 +54,12 @@ exports.handler = async (event, context, callback) => {
     hoursSlept
   ]; 
 
-  
-
   var error = new Error("wrong datatype inside json");
 
   console.log("Query param weight : ", queryParams[0])
   console.log("Query param calorieIntake: ", queryParams[1])
     
-  //check if the right data type is provided
-
+  //validating data provided in the form
   if(typeof weight != "number" || 
      typeof calorieIntake != "number"   || 
      typeof caloriesBurned != "number"     ||
@@ -88,8 +72,8 @@ exports.handler = async (event, context, callback) => {
 
     context.fail(error);
 
- // SQL query to insert into keyholder table
- // using the forign key key_holdertype_id from keyholdertype table
+  // SQL query to insert into keyholder table
+  // using the forign key key_holdertype_id from keyholdertype table
  
   }else{
      var query = "INSERT INTO CUSTOMER_METRICS(weight, calorie_intake, calories_burned, workout_type, length_workout, hours_slept) VALUES ( ?,?,?,?,?, ?);"  
@@ -103,32 +87,17 @@ exports.handler = async (event, context, callback) => {
     console.log("Responce is ", res); 
 
     const response = {
-      "statusCode": 200,
+       "statusCode": 200,
        "headers": {
-      "Access-Control-Allow-Origin": "*",
+       "Access-Control-Allow-Origin": "*",
      },
-     "body": "Thank you for entering daily data!"
-  }
-
-     //return resp;
+      "body": "Thank you for entering daily data!"
+    }
       callback(null,response);
-     //sayThankYou();
       
     })
  }
-//end of sql qury
-
+  //end of sql qry
   await mysql.end();
 
-  const resp = {
-      "statusCode": 200,
-       "headers": {
-      "Access-Control-Allow-Origin": "*",
-     },
-     "body": "Thank you for entering daily data!"
-  }
-
-callback(null, resp);
-
-
- };
+};
