@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en">
 <head>
+		<script src="jquery-3.4.1.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Activity - LTF</title> 
@@ -29,19 +31,40 @@
 	<link rel="icon" type="image/png" href="../images/favicon.png">
 
 	<script>
-		fetch('https://4x21cafvig.execute-api.us-west-2.amazonaws.com/default/myResponseFunction'
+
+			$(document).ready(function(){
+
+				fetch('https://4x21cafvig.execute-api.us-west-2.amazonaws.com/default/myResponseFunction'
 		, {
 		   method: "GET"
 		}
-           
-).then(response => responce.text())
-			.then(
-			console.log("Metrics: ", responce)
-			)
-			.catch(function(err) {
+    ).then((response) => {
+           return response.json();
+  })
+  .then((data) => {	
+
+		console.log(data);
+		var metric_data = "";
+
+		$.each(data, function(key, value){
+			metric_data += '<tr>';
+				metric_data += '<td>' + value.entry + '</td>';
+				metric_data += '<td>' + value.weight + '</td>';
+				metric_data += '<td>' + value.calorie_intake + '</td>';
+				metric_data += '<td>' + value.calories_burned + '</td>';
+				metric_data += '<td>' + value.workout_type + '</td>';
+				metric_data += '<td>'	+ value.length_workout + '</td>';
+				metric_data += '<td>' + value.hours_slept + '</td>';
+				metric_data += '</tr>';
+
+		});
+		$('#metrics-table').append(metric_data);
+		
+  }).catch(function(err) {
 			console.log('Fetch problem: ' + err.message);
 			});
-
+			});			
+		// const metrics; 
 	</script>
 
 </head>
@@ -58,7 +81,7 @@
             <input type="checkbox" id="show-menu" role="button">
             <ul id="menu" class = "test">
 				<li><a href="login.html">LOGIN</a></li>
-                <li><a href="../index.html">INDEX</a></li>
+                <li><a href="../index.html">HOME</a></li>
                 <li><a href="activity.html">ACTIVITY</a></li>
                 <li><a href="contact.html">CONTACT</a></li>
             </ul>
@@ -71,17 +94,18 @@
             <!--<div id="chart-container" class = "eight columns" style="margin-top: 1%">-->
 			<h4>Your activity chart will render here!</h4>
 			
-			<table style="width:90%">
+			<table id = "metrics-table" style="width:90%">
 				<tr>
+					<th>Entrance</th>
 				  <th>Weight</th>
-				  <th>Calories Intage</th>
-				  <th>Calories Butned</th>
+				  <th>Calories Intake</th>
+				  <th>Calories Burned</th>
 				  <th>Workout Type</th>
-				  <th>Activity Level</th>
+				  <!-- <th>Activity Level</th> -->
 				  <th>Time working out</th>
 				  <th>Hours of sleep</th>
 				</tr>
-				<tr>
+				<!-- <tr>
 				  <td>Jill</td>
 				  <td>Smith</td>
 				  <td>50</td>
@@ -90,8 +114,10 @@
 				  <td>Eve</td>
 				  <td>Jackson</td>
 				  <td>94</td>
-				</tr>
-			  </table>
+				</tr> -->
+				</table>
+				
+				
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 			<!--ended chart-->
 			<!--Your lists of entered daily activitites -->
@@ -99,22 +125,22 @@
 		</main>
 
 		<div class = "four columns" style="margin-top: 2%">
-			<img src="images/runner.jpg" alt="client photo" class = "twelve columns" >
+			<!-- <img src="images/runner.jpg" alt="client photo" class = "twelve columns" > -->
 		</div>
       </div><!--ended second row-->
       <div class = "row"  style="margin-top: 3%">
-		<div class = "three columns" id ="bottom-left">
-			<p>This is a very healthy recipe that tastes yummy!</p>
-		</div>
+		<!-- <div class = "three columns" id ="bottom-left"> -->
+			<!-- <p>This is a very healthy recipe that tastes yummy!</p> -->
+		<!-- </div> -->
 
-		<div class = "three columns" id ="bottom-center">
-			<img src="images/blueberry-spinach.jpg" alt="healthy food picture" class = "eleven columns">
-		</div>
+		<!-- <div class = "three columns" id ="bottom-center"> -->
+			<!-- <img src="images/blueberry-spinach.jpg" alt="healthy food picture" class = "eleven columns"> -->
+		<!-- </div> -->
 
-		<div class = "three columns" id ="bottom-right">
-			<p>Keep excercising!</p>
-			<p>Some inspiring quotes</p>
-		</div>
+		<!-- <div class = "three columns" id ="bottom-right"> -->
+			<!-- <p>Keep excercising!</p>
+			<p>Some inspiring quotes</p> -->
+		<!-- </div> -->
       </div><!--ended second row-->
 
 
@@ -135,4 +161,5 @@
   </footer> <!--end of footer-->
      </div>
 </body>
+
 </html>

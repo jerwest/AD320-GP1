@@ -20,10 +20,15 @@ const mysql = require('serverless-mysql')({
 exports.handler = async (event, context) => {
 
   mysql.config();
+
+  console.log("MySQL configured");
   
-  let results = await mysql.query('SELECT * FROM CUSTOMER_METRICS')
+  const results = await mysql.query('SELECT * FROM CUSTOMER_METRICS')
+  console.log("MySQL RDS configured");
 
   await mysql.end();
+  
+  console.log("Results ", results);
   //return S3.listBuckets().promise();
   // TODO pag
   return results;
