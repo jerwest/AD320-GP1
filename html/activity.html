@@ -28,6 +28,49 @@
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	<link rel="icon" type="image/png" href="../images/favicon.png">
 
+<<<<<<< Updated upstream
+=======
+	<script>
+
+			$(document).ready(function(){
+
+				fetch('https://4x21cafvig.execute-api.us-west-2.amazonaws.com/default/myResponseFunction'
+		, {
+		   method: "GET"
+		}
+    ).then((response) => {
+           return response.json();
+  })
+  .then((data) => {	
+
+		console.log(data);
+		var metric_data = "";
+
+		$.each(data, function(key, value){
+			metric_data += '<tr>';
+				metric_data += '<td>' + value.entry + '</td>';
+				metric_data += '<td>' + value.weight + '</td>';
+				metric_data += '<td>' + value.calorie_intake + '</td>';
+				metric_data += '<td>' + value.calories_burned + '</td>';
+				metric_data += '<td>' + value.workout_type + '</td>';
+				metric_data += '<td>'	+ value.length_workout + '</td>';
+				metric_data += '<td>' + value.hours_slept + '</td>';
+				metric_data += "<td>" + "<button type='button' value = 'X' >" + "</button>"+ "</td>";
+				metric_data += '</tr>';
+		
+		});
+
+		console.log("Metric data ", metric_data)
+		$('#metrics-table').append(metric_data);
+		
+  }).catch(function(err) {
+			console.log('Fetch problem: ' + err.message);
+			});
+			});			
+		// const metrics; 
+	</script>
+
+>>>>>>> Stashed changes
 </head>
 <body>
 	<div class="container">
@@ -44,7 +87,7 @@
 				<li><a href="login.html">LOGIN</a></li>
                 <li><a href="../index.html">INDEX</a></li>
                 <li><a href="activity.html">ACTIVITY</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
+                <!-- <li><a href="contact.html">CONTACT</a></li> -->
             </ul>
         </nav> <!--end of nav-->
 
@@ -53,7 +96,37 @@
       <div class = "row" >
 		<main id="chart-container" class = "eight columns" style="margin-top: 2%">
             <!--<div id="chart-container" class = "eight columns" style="margin-top: 1%">-->
+<<<<<<< Updated upstream
             <h4>Your activity chart will render here!</h4>
+=======
+			<h4>Your activity chart will render here!</h4>
+			
+			<table id = "metrics-table" style="width:90%">
+				<tr>
+					<th>Entrance</th>
+				  <th>Weight</th>
+				  <th>Calories Intake</th>
+				  <th>Calories Burned</th>
+					<th>Workout Type</th>
+				  <!-- <th>Activity Level</th> -->
+				  <th>Time working out</th>
+					<th>Hours of sleep</th>
+					<th> Action </th>
+				</tr>
+				<!-- <tr>
+				  <td>Jill</td>
+				  <td>Smith</td>
+				  <td>50</td>
+				</tr>
+				<tr>
+				  <td>Eve</td>
+				  <td>Jackson</td>
+				  <td>94</td>
+				</tr> -->
+				</table>
+				
+				
+>>>>>>> Stashed changes
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 			<!--ended chart-->
 			<!--Your lists of entered daily activitites -->
