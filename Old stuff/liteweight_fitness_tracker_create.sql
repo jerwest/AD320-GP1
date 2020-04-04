@@ -3,15 +3,6 @@ CREATE DATABASE liteweight_fitness_tracker;
 USE liteweight_fitness_tracker;
 USE liteweight_fitness_tracker;
 
-CREATE TABLE LOGIN_INFO (
-	customer_id	       	INTEGER 	      	NOT NULL AUTO_INCREMENT,
-	username       		VARCHAR(25) 	    NOT NULL,
-	password          	VARCHAR(20)        	NOT NULL,
-	CONSTRAINT 		    CUSTOMER_ID_PK		PRIMARY KEY (customer_id)
-	);
-
-ALTER TABLE LOGIN_INFO AUTO_INCREMENT = 0;
-
 drop table CUSTOMER_METRICS;
 CREATE TABLE CUSTOMER_METRICS (
 	metric_id	       	INTEGER 	      	NOT NULL AUTO_INCREMENT,
